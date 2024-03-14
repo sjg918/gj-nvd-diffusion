@@ -1,0 +1,43 @@
+_BASE_: "Base-DiffusionDet.yaml"
+MODEL:
+  WEIGHTS: '/home/gpuadmin/kew/DiffusionNVD/diffdet_coco_res50.pth'
+  RESNETS:
+    DEPTH: 50
+    STRIDE_IN_1X1: False
+  DiffusionDet:
+    NUM_PROPOSALS: 500
+    NUM_CLASSES: 3
+    stage_diffusion: (False, False, False, True, False)
+    stage_DDIM: False
+    DDIM_alpha_next: 0.7027
+    DDIM_c: 3.5496e-05
+    DDIM_sigma: 0.7114
+    diffusion_num: (50, 50, 50, 20, 50)
+    diffusion_num_scale: (5, 5, 5, 5, 5)
+    drop_high: True
+    diffusion_middle: False
+    diffusion_xy_scale: 1.0
+    diffusion_wh_scale: 0.125
+    SAMPLE_STEP: 1
+    USE_TIME_EMBED: True
+DATASETS:
+  TRAIN: ("park_dataset_train",)
+  TEST:  ("park_dataset_eval",)
+SOLVER:
+  IMS_PER_BATCH: 4
+  STEPS: (30000, 45000)
+  MAX_ITER: 55000
+  CHECKPOINT_PERIOD: 5000
+SEED: 12065
+INPUT:
+  USE_Gray_Proposals: False
+  USE_CbCr_Proposals: True
+  CbCr_thr: 20
+  sobel_mask_size: 3
+  Train_CbCr_mask_size: 0
+  Test_CbCr_mask_size: 15
+  CROP:
+    ENABLED: True
+  FORMAT: "RGB"
+TEST:
+  EVAL_PERIOD: 5000
