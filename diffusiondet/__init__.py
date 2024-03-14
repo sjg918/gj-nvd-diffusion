@@ -10,4 +10,3 @@ from .detector import DiffusionDet
 #from .dataset_mapper import DiffusionDetDatasetMapper
 from .dataset_mapper_fix import DiffusionDetDatasetMapper
 from .test_time_augmentation import DiffusionDetWithTTA
-from .swintransformer import build_swintransformer_fpn_backbone
