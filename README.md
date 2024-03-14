@@ -28,7 +28,7 @@ Any questions regarding my published papers and code are always welcome. </br>
 [DiffusionDet: Diffusion Model for Object Detection](https://github.com/ShoufaChen/DiffusionDet) </br>
 [스마트 전조등을 위한 비전 기반 야간 차량 인식](https://www.dbpia.co.kr/journal/articleDetail?nodeId=NODE11654189)
 
-# Gwang Ju Dataset sharing (Koreans Only)
+# GwangJu Dataset sharing (Koreans Only)
 데이터 셋의 용량이 약 100Gb(스테레오영상 약 60,000장)가 넘어서 저의 능력으로는 온라인 공유가 어렵습니다. </br>
 만약 광주 데이터 셋이 연구에 필요하시면 제가 전체 데이터 셋을 물리적인 방법(전남대학교 방문 or 출장)으로 드릴 수 있습니다. </br>
 공유에 대한 요청은 언제든지 환영입니다. 감사합니다. </br>
