@@ -176,7 +176,7 @@ class DiffusionDet(nn.Module):
         x_boxes = ((x_boxes / self.scale) + 1) / 2
         x_boxes = box_cxcywh_to_xyxy(x_boxes)
         x_boxes = x_boxes * images_whwh[:, None, :]
-        outputs_class, outputs_coord = self.head(backbone_feats, images_whwh, x, x_boxes, t, None, filenames)
+        outputs_class, outputs_coord = self.head(backbone_feats, images_whwh, x, x_boxes, t, None)
 
         x_start = outputs_coord[-1]  # (batch, num_proposals, 4) predict boxes: absolute coordinates (x1, y1, x2, y2)
         x_start = x_start / images_whwh[:, None, :]
@@ -363,7 +363,7 @@ class DiffusionDet(nn.Module):
             targets, x_boxes, noises, x, t = self.prepare_targets(gt_instances, CbCr_vaild)
             t = t.squeeze(-1)
             x_boxes = x_boxes * images_whwh[:, None, :]
-            outputs_class, outputs_coord = self.head(features, images_whwh, x, x_boxes, t, None)
+            outputs_class, outputs_coord = self.head(features, images_whwh, x, x_boxes, t)
             output = {'pred_logits': outputs_class[-1], 'pred_boxes': outputs_coord[-1]}
 
             if self.deep_supervision:
