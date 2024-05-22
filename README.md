@@ -4,6 +4,8 @@ Implementation of  "CNN Combined With a Prior Knowledge-based Candidate Search a
 
 # Log
 20240522: Added missing data augmentation files. Updated candidate scale adjustment. </br>
+20240523: In the published paper, matching between candidate and gt is introduced as follows: The 1:1 matching of candidates and GTs is performed using bipartite matching; 
+However, 1:5 matching was being performed. It's my fault ... </br>
 
 # Weights
 Google drive link gives the pre-trained weights of our network. </br>
