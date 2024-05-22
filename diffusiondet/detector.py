@@ -363,7 +363,7 @@ class DiffusionDet(nn.Module):
             targets, x_boxes, noises, x, t = self.prepare_targets(gt_instances, CbCr_vaild)
             t = t.squeeze(-1)
             x_boxes = x_boxes * images_whwh[:, None, :]
-            outputs_class, outputs_coord = self.head(features, images_whwh, x, x_boxes, t, None)
+            outputs_class, outputs_coord = self.head(features, images_whwh, x, x_boxes, t, None, None)
             output = {'pred_logits': outputs_class[-1], 'pred_boxes': outputs_coord[-1]}
 
             if self.deep_supervision:
