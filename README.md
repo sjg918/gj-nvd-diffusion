@@ -2,6 +2,9 @@
 Implementation of  "CNN Combined With a Prior Knowledge-based Candidate Search and Diffusion Method for Nighttime Vehicle Detection"</br>
 [paper link](https://link.springer.com/article/10.1007/s12555-023-0598-x)
 
+# Log
+20240522: Added missing data augmentation files. Updated candidate scale adjustment. </br>
+
 # Weights
 Google drive link gives the pre-trained weights of our network. </br>
 [google drive link](https://drive.google.com/file/d/1jI8Jok-zR4QWLqzd50XbQNNhqEy4M-h5/view?usp=sharing) </br>
