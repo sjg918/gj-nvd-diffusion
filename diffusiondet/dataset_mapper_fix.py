@@ -203,8 +203,8 @@ class DiffusionDetDatasetMapper:
         mask = np.logical_and(mask1, mask2)
         vaild_points = vaild_points[mask]
         
-        vaild_points[:, 0] = vaild_points[:, 0] / self.input_park_w
-        vaild_points[:, 1] = vaild_points[:, 1] / self.input_park_h
+        vaild_points[:, 0] = vaild_points[:, 0] / image_shape[1]
+        vaild_points[:, 1] = vaild_points[:, 1] / image_shape[0]
         vaild_points = (vaild_points * 2 - 1) * 2
 
         # Pytorch's dataloader is efficient on torch.Tensor due to shared-memory,
